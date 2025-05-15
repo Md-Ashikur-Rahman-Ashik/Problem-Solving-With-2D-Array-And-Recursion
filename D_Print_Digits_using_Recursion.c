@@ -5,17 +5,22 @@ void printDigits(int testcases, int integerArray[], int i)
 {
     if (i >= 0)
     {
-        if (integerArray[i] < 10)
+        if (integerArray[i] % 10 == 0)
         {
             printDigits(testcases, integerArray, i - 1);
-            printf("%d ", integerArray[i]);
+            if (integerArray[i] > 0)
+            {
+                /* code */
+                printf("%d", integerArray[i]);
+            }
+            printf("\n");
         }
         else
         {
             int num = integerArray[i] % 10;
             integerArray[i] = integerArray[i] / 10;
             printDigits(testcases, integerArray, i);
-            printf("%d\n", num);
+            printf("%d ", num);
             /* code */
         }
     }
