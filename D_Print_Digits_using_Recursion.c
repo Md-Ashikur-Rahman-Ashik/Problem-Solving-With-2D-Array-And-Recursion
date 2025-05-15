@@ -1,47 +1,46 @@
 #include <stdio.h>
 #include <string.h>
 
-void printDigits(int testcases, int integerArray[], int i)
+void digitPrint(int num)
 {
-    if (i >= 0)
+    if (num == 0)
     {
-        if (integerArray[i] % 10 == 0)
-        {
-            printDigits(testcases, integerArray, i - 1);
-            if (integerArray[i] > 0)
-            {
-                /* code */
-                printf("%d", integerArray[i]);
-            }
-            printf("\n");
-        }
-        else
-        {
-            int num = integerArray[i] % 10;
-            integerArray[i] = integerArray[i] / 10;
-            printDigits(testcases, integerArray, i);
-            printf("%d ", num);
-            /* code */
-        }
+        /* code */
+        return;
     }
+
+    digitPrint(num / 10);
+    int lastDigit = num % 10;
+    printf("%d ", lastDigit);
+}
+
+void testcaseInput(int testcases, int countCase)
+{
+    if (countCase == testcases)
+    {
+        /* code */
+        return;
+    }
+
+    int num;
+    scanf("%d", &num);
+    if (num == 0)
+    {
+        /* code */
+        printf("0");
+    }
+
+    digitPrint(num);
+    printf("\n");
+    testcaseInput(testcases, countCase + 1);
 }
 
 int main()
 {
-    int testcases;
+    int testcases, countCase = 0;
     scanf("%d", &testcases);
 
-    int i = testcases - 1;
-
-    int integerArray[testcases];
-
-    for (int i = 0; i < testcases; i++)
-    {
-        /* code */
-        scanf("%d", &integerArray[i]);
-    }
-
-    printDigits(testcases, integerArray, i);
+    testcaseInput(testcases, countCase);
 
     return 0;
 }
