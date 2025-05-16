@@ -9,7 +9,7 @@ int countString(char stringArray[], int vowelCount, int i)
         return vowelCount;
     }
 
-    if (stringArray[i] == 'a' || stringArray[i] == 'e' || stringArray[i] == 'i' || stringArray[i] == 'o' || stringArray[i] == 'u' || stringArray[i] == 'A' || stringArray[i] == 'E' || stringArray[i] == 'O' || stringArray[i] == "I" || stringArray[i] == "U")
+    if (stringArray[i] == 'a' || stringArray[i] == 'e' || stringArray[i] == 'i' || stringArray[i] == 'o' || stringArray[i] == 'u' || stringArray[i] == 'A' || stringArray[i] == 'E' || stringArray[i] == 'I' || stringArray[i] == "O" || stringArray[i] == "U")
     {
         vowelCount++;
     }
