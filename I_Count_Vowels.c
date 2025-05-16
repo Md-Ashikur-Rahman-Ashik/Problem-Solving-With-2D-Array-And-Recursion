@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 
-int countString(char stringArray[], int stringLength, int vowelCount, int i)
+int countString(char stringArray[], int vowelCount, int i)
 {
-    if (i == stringLength)
+    if (stringArray[i] == '\0')
     {
         /* code */
         return vowelCount;
@@ -13,7 +13,7 @@ int countString(char stringArray[], int stringLength, int vowelCount, int i)
     {
         vowelCount++;
     }
-    countString(stringArray, stringLength, vowelCount, i + 1);
+    countString(stringArray, vowelCount, i + 1);
 }
 
 int main()
@@ -21,12 +21,10 @@ int main()
     char stringArray[201];
     fgets(stringArray, 201, stdin);
 
-    int stringLength = strlen(stringArray);
-
     int vowelCount = 0;
     int i = 0;
 
-    int result = countString(stringArray, stringLength, vowelCount, i);
+    int result = countString(stringArray, vowelCount, i);
     printf("%d", result);
 
     return 0;
